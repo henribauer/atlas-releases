@@ -5,7 +5,7 @@ grammar, takes lecture notes with you, and talks with you in the language you ar
 
 **[→ Download the latest version](https://github.com/henribauer12-source/atlas-releases/releases/latest)**
 
-Atlas runs on a Mac with Apple silicon (M1 or newer) and macOS 13 or newer.
+Atlas runs on a Mac with Apple silicon (M1 or newer) and macOS 26 or newer.
 
 ---
 
