@@ -9,6 +9,54 @@ Atlas runs on a Mac with Apple silicon (M1 or newer) and macOS 26 or newer.
 
 ---
 
+## What it looks like
+
+### Home
+
+One place to land. The orb reacts when you or the agent speaks, and the cards below show what is
+actually due today.
+
+![Atlas Home](img/home.png)
+
+The agent can operate the app, not just chat: it reads your courses, starts a lecture, writes notes
+and stages flashcards. When you leave Home, the conversation follows you as a bubble in the corner.
+Without an ElevenLabs key it still works — you type instead of speaking.
+
+### University
+
+Every course from your vault, grouped by semester, with note and PDF counts from the live index.
+
+![Atlas University](img/university.png)
+
+Courses aren't configured in the app — they *are* your vault's folder structure. Add a folder in
+Obsidian and it shows up here. Deleting Atlas loses nothing: every note and every review log stays
+plain markdown that Obsidian can still read.
+
+### Lecture
+
+Pick a course, start, and type. The script sits on the right while you take notes, the tutor can
+join, and everything is filed back into the course's notes when you're done.
+
+![Atlas Lecture](img/lecture.png)
+
+Every line is written to disk as you type it, so a crash mid-lecture costs nothing.
+
+### Languages
+
+Flashcards scheduled by [FSRS](https://github.com/open-spaced-repetition/fsrs4anki), a grammar path
+that unlocks as you go, and a streak to keep you honest.
+
+![Atlas Languages](img/languages.png)
+
+A fresh install starts with Spanish. You can add other languages in Settings, each with its own
+voice. There's also a **Conversation** tab for spoken practice, where words from the chat can be
+added straight into your deck.
+
+> The screenshots show a vault with three languages and 17 courses. Yours will show your own notes —
+> Atlas has nothing of its own in it.
+
+---
+
 ## What you need
 
 | | Needed? | What it's for |
@@ -188,3 +236,36 @@ Terminal, type `claude`, and sign in again.
 
 **Voice doesn't work but cards are read aloud.** Your ElevenLabs key is probably missing the
 *Conversational AI* permission. Make a new key with full access.
+
+---
+
+## What it does with your things
+
+Worth knowing before you install anything that reads your notes.
+
+- **Your notes stay yours.** Atlas reads and writes the same markdown Obsidian does. Uninstall it
+  and every note, every flashcard log stays readable in Obsidian. Nothing is locked in a format
+  only Atlas understands.
+- **Your cards and review history** live in a database in your Mac's own application folder, not in
+  the vault — thousands of rows queried by date have no sensible place in markdown, and it keeps
+  answering a card from churning your iCloud sync.
+- **Your keys stay on your Mac.** The ElevenLabs key is a file in your home folder, read only when
+  Atlas speaks. Claude Code is a program you install and log into yourself.
+- **Atlas has no server.** There's no account, no telemetry, and nothing is uploaded anywhere. It
+  talks to exactly three places: Obsidian on your own machine, ElevenLabs when it speaks, and
+  Anthropic through the Claude Code you installed.
+- **It is not signed by Apple**, which is why macOS stops it the first time. The trade-off is
+  described above — a yearly Apple fee buys the signature; this app doesn't pay it.
+
+## How it is built
+
+Electron, with no bundler, no UI framework and no native modules. The renderer is plain ES modules
+served over a privileged `atlas://` scheme with a real CSP, custom elements with a small store,
+`node:sqlite` for card data, and two search indexes behind one router so that both `文法` and
+substrings inside long German compounds are findable.
+
+Four gates run on every install and abort it on failure: layer boundaries, a per-module size
+budget, a file manifest, and a TypeScript check over JSDoc types. A fifth refuses to build if
+anything key-shaped ever appears in a tracked file.
+
+The source is a private repository — this one exists to hand out the app and explain it.
