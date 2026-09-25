@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="img/banner.svg" alt="Atlas — a study companion for your Obsidian vault" width="100%">
+</p>
+
 # Atlas
 
 A study companion for your Obsidian vault. It makes flashcards from your notes, walks you through
