@@ -52,6 +52,8 @@ A fresh install starts with Spanish. You can add other languages in Settings, ea
 voice. There's also a **Conversation** tab for spoken practice, where words from the chat can be
 added straight into your deck.
 
+![Atlas Conversations](img/image.png)
+
 > The screenshots show a vault with three languages and 17 courses. Yours will show your own notes —
 > Atlas has nothing of its own in it.
 
