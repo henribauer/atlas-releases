@@ -7,7 +7,7 @@
 A study companion for your Obsidian vault. It makes flashcards from your notes, walks you through
 grammar, takes lecture notes with you, and talks with you in the language you are learning.
 
-**[→ Download the latest version](https://github.com/henribauer12-source/atlas-releases/releases/latest)**
+**[→ Download the latest version](https://github.com/henribauer/atlas-releases/releases/latest)**
 
 Atlas runs on a Mac with Apple silicon (M1 or newer) and macOS 26 or newer.
 
@@ -79,7 +79,7 @@ own voice. You just can't have a spoken conversation.
 
 ## 1. Install Atlas
 
-1. Download the file ending in `.dmg` from the [latest release](https://github.com/henribauer12-source/atlas-releases/releases/latest).
+1. Download the file ending in `.dmg` from the [latest release](https://github.com/henribauer/atlas-releases/releases/latest).
 2. Double-click it. A window opens with the Atlas icon and an Applications folder.
 3. Drag the Atlas icon onto the Applications folder.
 4. Close the window, then eject "Atlas" in the Finder sidebar. You can delete the `.dmg` now.
@@ -221,7 +221,7 @@ history and settings live in a separate folder that replacing the app doesn't to
 If Updates says checks are off, paste this into the **Update feed** box:
 
 ```
-https://raw.githubusercontent.com/henribauer12-source/atlas-releases/main/version.json
+https://raw.githubusercontent.com/henribauer/atlas-releases/main/version.json
 ```
 
 ---
