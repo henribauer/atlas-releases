@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/banner.svg" alt="Atlas — a study companion for your Obsidian vault" width="100%">
+  <img src="img/banner.jpg" alt="Atlas — a study companion for your Obsidian vault" width="100%">
 </p>
 
 # Atlas
