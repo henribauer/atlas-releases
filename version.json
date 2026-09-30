@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.2.1",
   "url": "https://github.com/henribauer12-source/atlas-releases/releases/latest",
-  "notes": "lecture: titles, bullets and sub-bullets in the stream; Shift+Enter makes a paragraph"
+  "notes": "lecture: a Shift+Enter paragraph saves as its lines, not refused as one"
 }
